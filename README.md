@@ -13,14 +13,14 @@ hello-java-maven/
 
 ## HelloWorld.java
 
-```java
+java
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, Jenkins + Maven!");
     }
 }
 
-pom.xml
+**pom.xml**
 
 This file contains the Maven build configuration and specifies the compiler plugin for Java 1.8.
 
