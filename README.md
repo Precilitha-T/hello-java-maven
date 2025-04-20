@@ -13,7 +13,6 @@ hello-java-maven/
 
 ## HelloWorld.java
 
-java
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, Jenkins + Maven!");
@@ -65,12 +64,14 @@ curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
+  
 b. Install Jenkins:
 sudo apt update -y
 sudo apt install jenkins -y
 Start Jenkins
 systemctl start jenkins
 systemctl enable jenkins
+
 To verify:
 systemctl status jenkins
 
@@ -89,32 +90,23 @@ Click Install suggested plugins
 2. Configure Jenkins:
 
 Go to Manage Jenkins > Global Tool Configuration
-
 Add Maven (e.g., Maven 3.9.9)
 
 ![Screenshot (253)](https://github.com/user-attachments/assets/dfbd971e-e086-4cb1-94e1-585a1904e8ac)
 
-
 3. Create a Freestyle Project:
 
 Project Name: hello-java-maven
-
 Source Code Management: Git (use this repo URL)
-
 Build Step: Invoke top-level Maven targets
-
 Goals: clean package
 
 4. Build the Project
-
 Run the job
-
 Check the Console Output for BUILD SUCCESS
 
 Output
-
 If successful, the console will display:
-
 [INFO] BUILD SUCCESS
 
 Results:
